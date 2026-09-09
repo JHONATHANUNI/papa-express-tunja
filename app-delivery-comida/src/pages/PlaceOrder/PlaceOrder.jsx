@@ -50,9 +50,10 @@ const PlaceOrder = () => {
 
     const message = [
       '🥔 *¡Nuevo Pedido - Papa Express Tunja!*',
-      `*Cliente:* ${nombre}`,
+      `*Nombre:* ${nombre}`,
+      `*Dirección en Tunja:* ${direccion}`,
+      `*Barrio:* ${barrio}`,
       `*Teléfono:* ${telefono}`,
-      `*Dirección:* ${direccion} - *Barrio:* ${barrio}`,
       '----------------------------------',
       '*Detalle del Pedido:*',
       detailLines,
@@ -63,7 +64,7 @@ const PlaceOrder = () => {
       formData.notas ? `*Notas:* ${formData.notas}` : ''
     ].filter(Boolean).join('\n');
 
-    const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/573222325484?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

@@ -11,17 +11,13 @@ const Navbar = ({ setShowLogin }) => {
     return (
         <div className='navbar'>
             <div className='brand-wrap'>
-                <Link to='/'><img src={assets.logo} alt='Papa Express Tunja' className='logo' /></Link>
-                <div className='brand-text'>
-                    <span>Papa Express Tunja</span>
-                    <small>De la Finca a tu Hogar</small>
-                </div>
+                <div className='navbar-logo-text'>🥔 Papa Express Tunja</div>
             </div>
 
             <ul className='navbar-menu'>
                 <Link to='/' onClick={() => setMenu('home')} className={menu === 'home' ? 'active' : ''}>Inicio</Link>
-                <a href='#explore-menu' onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>Catálogo</a>
-                <a href='#app-download' onClick={() => setMenu('mobile-app')} className={menu === 'mobile-app' ? 'active' : ''}>App</a>
+                <a href='#explore-menu' onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>Nuestra Papa</a>
+                <a href='#footer' onClick={() => setMenu('contact-us')} className={menu === 'contact-us' ? 'active' : ''}>Zonas en Tunja</a>
                 <a href='#footer' onClick={() => setMenu('contact-us')} className={menu === 'contact-us' ? 'active' : ''}>Contacto</a>
             </ul>
 

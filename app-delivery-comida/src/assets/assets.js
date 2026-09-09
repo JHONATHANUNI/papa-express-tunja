@@ -84,30 +84,37 @@ export const assets = {
     parcel_icon
 }
 
+const potatoCategoryImages = {
+  arrobas: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80',
+  bultos: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80',
+  criolla: 'https://images.unsplash.com/photo-1590165482129-1b8b27097858?auto=format&fit=crop&w=800&q=80',
+  oferta: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80'
+};
+
 export const menu_list = [
     {
         menu_name: 'Por Arroba',
-        menu_image: menu_1
+        menu_image: potatoCategoryImages.arrobas
     },
     {
         menu_name: 'Por Bulto',
-        menu_image: menu_2
+        menu_image: potatoCategoryImages.bultos
     },
     {
         menu_name: 'Papa Criolla',
-        menu_image: menu_3
+        menu_image: potatoCategoryImages.criola
     },
     {
         menu_name: 'Ofertas de la Semana',
-        menu_image: menu_4
+        menu_image: potatoCategoryImages.oferta
     }
-]
+];
 
 export const food_list = [
     {
         _id: '1',
         name: 'Papa Pastusa',
-        image: food_1,
+        image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80',
         price: 25000,
         description: 'Arroba (12.5 kg) • Ideal para guiso, a la plancha y consumo familiar.',
         category: 'Por Arroba'
@@ -115,7 +122,7 @@ export const food_list = [
     {
         _id: '2',
         name: 'Papa Sabanera',
-        image: food_2,
+        image: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80',
         price: 28000,
         description: 'Arroba (12.5 kg) • Papa firme y versátil para cocina tradicional.',
         category: 'Por Arroba'
@@ -123,7 +130,7 @@ export const food_list = [
     {
         _id: '3',
         name: 'Papa Suprema',
-        image: food_3,
+        image: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80',
         price: 85000,
         description: 'Bulto (50 kg) • Calidad premium para hogares, restaurantes y ventas mayoristas.',
         category: 'Por Bulto'
@@ -131,7 +138,7 @@ export const food_list = [
     {
         _id: '4',
         name: 'Papa R-12',
-        image: food_4,
+        image: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80',
         price: 79000,
         description: 'Bulto (50 kg) • Papa de alta resistencia y excelente rendimiento en cocina.',
         category: 'Por Bulto'
@@ -139,7 +146,7 @@ export const food_list = [
     {
         _id: '5',
         name: 'Papa Criolla Lavada',
-        image: food_5,
+        image: 'https://images.unsplash.com/photo-1590165482129-1b8b27097858?auto=format&fit=crop&w=800&q=80',
         price: 34000,
         description: 'Papa Criolla • Lavada y lista para preparación gourmet y sancocho.',
         category: 'Papa Criolla'
@@ -147,7 +154,7 @@ export const food_list = [
     {
         _id: '6',
         name: 'Papa Criolla Limpia',
-        image: food_6,
+        image: 'https://images.unsplash.com/photo-1590165482129-1b8b27097858?auto=format&fit=crop&w=800&q=80',
         price: 32000,
         description: 'Papa Criolla • Ajuste ideal para mercado local y cocina casera.',
         category: 'Papa Criolla'
@@ -155,7 +162,7 @@ export const food_list = [
     {
         _id: '7',
         name: 'Combo Familiar Pastusa',
-        image: food_7,
+        image: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80',
         price: 45000,
         description: 'Medio Bulto (25 kg) • Oferta de la semana para familias y ventas pequeñas.',
         category: 'Ofertas de la Semana'
@@ -163,9 +170,9 @@ export const food_list = [
     {
         _id: '8',
         name: 'Combo Sabanera Premium',
-        image: food_8,
+        image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80',
         price: 47000,
         description: 'Medio Bulto (25 kg) • Excelente relación precio-calidad para tu hogar.',
         category: 'Ofertas de la Semana'
     }
-]
+];
