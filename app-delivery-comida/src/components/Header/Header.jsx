@@ -1,16 +1,18 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
 
 const Header = () => {
   return (
-    <div className='Header' class="header">
-      <div className="header-contents">
-        <h2>Order your favourite food here</h2>
-        <p>Experience the convenience of food delivery at your fingertips with our app. Order now and enjoy delicious meals delivered straight to your door.</p>
-        <button>View Menu</button>
+    <div className='header'>
+      <div className='header-contents'>
+        <h2>Papa fresca en Tunja, entregada a tu puerta.</h2>
+        <p>
+          Compra papa de finca directamente en Boyacá con entrega rápida en Tunja y zonas aledañas.
+        </p>
+        <button>Ver catálogo</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

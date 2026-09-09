@@ -1,58 +1,143 @@
-import React from 'react'
-import './PlaceOrder.css'
-import { useContext } from 'react'
-import {StoreContext} from '../../context/StoreContext'
+import React, { useContext, useState } from 'react';
+import './PlaceOrder.css';
+import { StoreContext } from '../../context/StoreContext';
+
+const DELIVERY_FEE = 4000;
 
 const PlaceOrder = () => {
+  const { cartItems, food_list, getTotalCartAmount, currencyFormatter } = useContext(StoreContext);
 
-      const {getTotalCartAmount} = useContext(StoreContext)
+  const [formData, setFormData] = useState({
+    nombre: '',
+    telefono: '',
+    direccion: '',
+    barrio: '',
+    notas: ''
+  });
 
+  const subtotal = getTotalCartAmount();
+  const total = subtotal + (subtotal === 0 ? 0 : DELIVERY_FEE);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const selectedItems = food_list.filter((item) => cartItems[item._id] > 0);
+
+    if (!selectedItems.length) {
+      alert('Tu carrito está vacío. Agrega productos antes de confirmar el pedido.');
+      return;
+    }
+
+    const nombre = formData.nombre.trim();
+    const telefono = formData.telefono.trim();
+    const direccion = formData.direccion.trim();
+    const barrio = formData.barrio.trim();
+
+    if (!nombre || !telefono || !direccion || !barrio) {
+      alert('Por favor completa nombre, teléfono, dirección y barrio para continuar.');
+      return;
+    }
+
+    const detailLines = selectedItems.map((item) => {
+      const quantity = cartItems[item._id];
+      return `- ${quantity}x ${item.name} (${currencyFormatter.format(item.price)})`;
+    }).join('\n');
+
+    const message = [
+      '🥔 *¡Nuevo Pedido - Papa Express Tunja!*',
+      `*Cliente:* ${nombre}`,
+      `*Teléfono:* ${telefono}`,
+      `*Dirección:* ${direccion} - *Barrio:* ${barrio}`,
+      '----------------------------------',
+      '*Detalle del Pedido:*',
+      detailLines,
+      '----------------------------------',
+      `*Domicilio (Tunja):* ${currencyFormatter.format(DELIVERY_FEE)}`,
+      `*Total a pagar:* ${currencyFormatter.format(total)}`,
+      '*Método de pago:* Efectivo / Nequi / Daviplata contra entrega.',
+      formData.notas ? `*Notas:* ${formData.notas}` : ''
+    ].filter(Boolean).join('\n');
+
+    const whatsappUrl = `https://wa.me/573000000000?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
-    <form className='place-order'>
+    <form className='place-order' onSubmit={handleSubmit}>
       <div className='place-order-left'>
-        <p className='title'>Delivery Information</p>
-        <div className='multi-fields'>
-        <input type="text" placeholder='First Name' />
-        <input type="text" placeholder='Last Name' />
-        </div>
-        <input type="Email" placeholder='Email address' />
-        <input type="text" placeholder='Street' />
-        <div className="multi-fields">
-        <input type="text" placeholder='City' />
-        <input type="text" placeholder='State' />
-        </div>
-        <div className="multi-fields">
-        <input type="text" placeholder='Zip code' />
-        <input type="text" placeholder='Country' />
-        </div>
-        <input type="text" placeholder='Phone' />
+        <p className='title'>Datos de entrega</p>
+
+        <input
+          type='text'
+          name='nombre'
+          placeholder='Nombre completo'
+          value={formData.nombre}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type='tel'
+          name='telefono'
+          placeholder='Teléfono'
+          value={formData.telefono}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type='text'
+          name='direccion'
+          placeholder='Dirección exacta en Tunja'
+          value={formData.direccion}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type='text'
+          name='barrio'
+          placeholder='Barrio / Sector'
+          value={formData.barrio}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name='notas'
+          rows='4'
+          placeholder='Notas adicionales para la entrega'
+          value={formData.notas}
+          onChange={handleChange}
+        />
       </div>
-      <div className="place-order-right">
-      <div className="cart-total">
-          <h2>Cart Totals</h2>
+
+      <div className='place-order-right'>
+        <div className='cart-total'>
+          <h2>Resumen del pedido</h2>
           <div>
-          <div className="cart-total-details">
+            <div className='cart-total-details'>
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p> 
+              <p>{currencyFormatter.format(subtotal)}</p>
             </div>
             <hr />
-            <div className="cart-total-details">
-              <p>Delivery Fee</p>
-              <p>${getTotalCartAmount()===0?0:2}</p>
+            <div className='cart-total-details'>
+              <p>Domicilio (Tunja)</p>
+              <p>{currencyFormatter.format(subtotal === 0 ? 0 : DELIVERY_FEE)}</p>
             </div>
             <hr />
-            <div className="cart-total-details">
+            <div className='cart-total-details'>
               <b>Total</b>
-              <b>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
+              <b>{currencyFormatter.format(total)}</b>
             </div>
           </div>
-          <button>PROCEED TO PAYMENT</button>
+
+          <button type='submit'>CONFIRMAR PEDIDO</button>
         </div>
       </div>
-      
     </form>
-  )
-}
+  );
+};
 
-export default PlaceOrder
+export default PlaceOrder;
