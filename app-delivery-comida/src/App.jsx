@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Navbar from './components/Nabvar/Navbar'; // Asumiendo la ruta correcta al componente Navbar
+import Navbar from './components/Nabvar/Navbar';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home'; // Asumiendo la ruta correcta al componente Home
-import Cart from './pages/Cart/Cart'; // Asumiendo la ruta correcta al componente Cart
+import Home from './pages/Home/Home';
+import Cart from './pages/Cart/Cart';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
 import LoginPopup from './components/LoginPopup/LoginPopup';
+import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 
 const App = () => {
 
@@ -23,8 +24,8 @@ const App = () => {
       </Routes>
     </div>
     <Footer/>
+    <WhatsAppFloat />
     </>
-    
   );
 }
 

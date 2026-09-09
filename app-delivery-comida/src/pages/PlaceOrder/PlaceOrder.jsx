@@ -45,21 +45,23 @@ const PlaceOrder = () => {
 
     const detailLines = selectedItems.map((item) => {
       const quantity = cartItems[item._id];
-      return `- ${quantity}x ${item.name} (${currencyFormatter.format(item.price)})`;
+      const itemTotal = item.price * quantity;
+      return `- ${quantity}x ${item.name} (${currencyFormatter.format(item.price)} c/u) = ${currencyFormatter.format(itemTotal)}`;
     }).join('\n');
 
     const message = [
       '🥔 *¡Nuevo Pedido - Papa Express Tunja!*',
       `*Nombre:* ${nombre}`,
-      `*Dirección en Tunja:* ${direccion}`,
+      `*Dirección exacta en Tunja:* ${direccion}`,
       `*Barrio:* ${barrio}`,
       `*Teléfono:* ${telefono}`,
       '----------------------------------',
-      '*Detalle del Pedido:*',
+      '*Desglose en COP ($):*',
       detailLines,
-      '----------------------------------',
+      `*Subtotal:* ${currencyFormatter.format(subtotal)}`,
       `*Domicilio (Tunja):* ${currencyFormatter.format(DELIVERY_FEE)}`,
       `*Total a pagar:* ${currencyFormatter.format(total)}`,
+      '----------------------------------',
       '*Método de pago:* Efectivo / Nequi / Daviplata contra entrega.',
       formData.notas ? `*Notas:* ${formData.notas}` : ''
     ].filter(Boolean).join('\n');
