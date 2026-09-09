@@ -33,8 +33,8 @@ export const assets = {
 const potatoCategoryImages = {
   arrobas: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80&v=2',
   bultos: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80&v=2',
-  criolla: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80&v=2',
-  oferta: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80&v=2'
+  criolla: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80&v=2',
+  oferta: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80&v=2'
 };
 
 export const menu_list = [
@@ -76,7 +76,7 @@ export const food_list = [
     {
         _id: '3',
         name: 'Papa Suprema',
-        image: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80&v=2',
+        image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80&v=2',
         price: 85000,
         description: 'Bulto (50 kg) • Calidad premium para hogares, restaurantes y ventas mayoristas.',
         category: 'Por Bulto'
@@ -84,7 +84,7 @@ export const food_list = [
     {
         _id: '4',
         name: 'Papa R-12',
-        image: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80&v=2',
+        image: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80&v=2',
         price: 79000,
         description: 'Bulto (50 kg) • Papa de alta resistencia y excelente rendimiento en cocina.',
         category: 'Por Bulto'
@@ -92,7 +92,7 @@ export const food_list = [
     {
         _id: '5',
         name: 'Papa Criolla Lavada',
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80&v=2',
+        image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80&v=2',
         price: 34000,
         description: 'Papa Criolla • Lavada y lista para preparación gourmet y sancocho.',
         category: 'Papa Criolla'
@@ -100,7 +100,7 @@ export const food_list = [
     {
         _id: '6',
         name: 'Papa Criolla Limpia',
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80&v=2',
+        image: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80&v=2',
         price: 32000,
         description: 'Papa Criolla • Ajuste ideal para mercado local y cocina casera.',
         category: 'Papa Criolla'
