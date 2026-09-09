@@ -11,7 +11,7 @@ const Navbar = ({ setShowLogin }) => {
     return (
         <div className='navbar'>
             <div className='brand-wrap'>
-                <div className='navbar-logo-text'>🥔 Papa Express Tunja</div>
+                <span className='navbar-title'>🥔 Papa Express Tunja</span>
             </div>
 
             <ul className='navbar-menu'>
@@ -22,7 +22,6 @@ const Navbar = ({ setShowLogin }) => {
             </ul>
 
             <div className='navbar-right'>
-                <img src={assets.search_icon} alt='Buscar' />
                 <div className='navbar-search-icon'>
                     <Link to='/cart'><img src={assets.basket_icon} alt='Carrito' /></Link>
                     <div className={getTotalCartAmount() === 0 ? '' : 'dot'}></div>

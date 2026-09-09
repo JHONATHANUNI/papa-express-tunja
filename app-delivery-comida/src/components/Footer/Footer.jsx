@@ -7,9 +7,9 @@ const Footer = () => {
     <div className='footer' id='footer'>
       <div className='footer-content'>
         <div className='footer-content-left'>
-          <img className='logo-white' src={assets.logo_white} alt='Papa Express Tunja' />
+          <h2 className='footer-logo'>🥔 Papa Express Tunja</h2>
           <p>
-            Papa Express Tunja - De la Finca a tu Hogar. Entregas directas de papa fresca en Tunja, con calidad, confianza y servicio cercano.
+            Papa Express Tunja: Distribución y venta directa de papa pastusa, sabanera, criolla y R-12 en arrobas y bultos. Calidad de la finca a la puerta de tu hogar o negocio en Tunja, Boyacá.
           </p>
           <div className='footer-social-icons'>
             <img src={assets.facebook_icon} alt='Facebook' />
@@ -22,26 +22,24 @@ const Footer = () => {
           <h2>Compañía</h2>
           <ul>
             <li>Inicio</li>
-            <li>Nosotros</li>
+            <li>Productos</li>
             <li>Envíos</li>
-            <li>Política</li>
+            <li>Contacto</li>
           </ul>
         </div>
 
         <div className='footer-content-right'>
-          <h2>Zona de entrega</h2>
+          <h2>Contacto</h2>
           <ul>
-            <li>Centro</li>
-            <li>Norte</li>
-            <li>Maldonado</li>
-            <li>Cooservicios</li>
-            <li>Los Muiscas</li>
-            <li>La Fuente</li>
+            <li>+57 3222325484</li>
+            <li>soporte@papaexpresstunja.com</li>
+            <li>Tunja, Boyacá</li>
+            <li>Atención directa por WhatsApp</li>
           </ul>
         </div>
       </div>
       <hr />
-      <p className='footer-copyright'>Papa Express Tunja • Domicilios en Boyacá</p>
+      <p className='footer-copyright'>Papa Express Tunja • Domicilios en Tunja y Boyacá</p>
     </div>
   );
 };
