@@ -12,7 +12,11 @@ const WhatsAppFloat = () => {
       className='whatsapp-float'
       aria-label='Chatear por WhatsApp'
     >
-      <span className='whatsapp-float__icon'>💬</span>
+      <img
+        src='https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg'
+        alt='WhatsApp'
+        style={{ width: '35px', height: '35px' }}
+      />
     </a>
   );
 };

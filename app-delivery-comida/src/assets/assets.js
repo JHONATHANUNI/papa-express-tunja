@@ -84,7 +84,7 @@ export const food_list = [
     {
         _id: '4',
         name: 'Papa R-12',
-        image: 'https://images.unsplash.com/photo-1508313880080-c4bef0730395?auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80',
         price: 79000,
         description: 'Bulto (50 kg) • Papa de alta resistencia y excelente rendimiento en cocina.',
         category: 'Por Bulto'
@@ -108,7 +108,7 @@ export const food_list = [
     {
         _id: '7',
         name: 'Combo Familiar Pastusa',
-        image: 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=800&q=80',
         price: 45000,
         description: 'Medio Bulto (25 kg) • Oferta de la semana para familias y ventas pequeñas.',
         category: 'Ofertas de la Semana'
